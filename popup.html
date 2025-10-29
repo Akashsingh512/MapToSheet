@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+      color: #1a73e8;
+    }
+    .section {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    button:hover {
+      background: #1557b0;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      display: none;
+    }
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    .count {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+    }
+    .help {
+      font-size: 11px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📍 Google Maps Scraper</h2>
+  
+  <div class="section">
+    <label>Google Apps Script Web App URL:</label>
+    <input type="text" id="webhookUrl" placeholder="https://script.google.com/macros/s/.../exec">
+    <div class="help">Deploy the Apps Script as Web App and paste URL here</div>
+  </div>
+
+  <div class="section">
+    <label>Or Google Sheets URL (for manual import):</label>
+    <input type="text" id="sheetUrl" placeholder="https://docs.google.com/spreadsheets/d/...">
+    <div class="help">Paste your Google Sheet URL</div>
+  </div>
+
+  <button id="saveSettings">Save Settings</button>
+  <button id="scrapeBtn">Extract Current Business</button>
+  <button id="scrapeAllBtn">Extract Visible Results (Quick)</button>
+  <button id="scrapeAllScrollBtn" style="background: #0d9488;">Extract All with Auto-Scroll</button>
+  <button id="exportBtn">Export to CSV</button>
+  <button id="exportSheetBtn">Open Google Sheet</button>
+  <button id="clearBtn" style="background: #dc3545;">Clear All Data</button>
+
+  <div class="count" id="count"></div>
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
