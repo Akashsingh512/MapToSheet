@@ -18,7 +18,7 @@ A powerful Chrome extension that extracts business information from Google Maps 
 
 ## 📸 Screenshots
 
-![Extension Popup](/image1.png)
+![Extension Popup](/image1.png) <br />
 *Extension interface with all features*
 
 ![Google Maps Extraction](/image.png)
